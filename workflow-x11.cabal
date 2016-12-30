@@ -1,8 +1,8 @@
-name:                workflow-backends-x11
+name:                workflow-x11
 version:             0.0.0
 synopsis:            TODO
 description:         TODO
-homepage:            http://github.com/sboosali/workflow-backends-x11#readme
+homepage:            http://github.com/sboosali/workflow-x11#readme
 license:             BSD3
 license-file:        LICENSE
 author:              Spiros Boosalis
@@ -29,7 +29,7 @@ extra-source-files:
 
 source-repository head
   type:     git
-  location: https://github.com/sboosali/workflow-backends-x11
+  location: https://github.com/sboosali/workflow-x11
 
 
 library
@@ -52,11 +52,12 @@ library
                      ScopedTypeVariables StandaloneDeriving
 
  exposed-modules:
-                 Commands
-                 Commands.Types
+                 Workflow.Backends.X11
+                 Workflow.Backends.X11.Types
+                 Workflow.Backends.X11.Bindings
 -- other-modules:
-                 Commands.Extra
-                 Commands.Example
+                 Workflow.Backends.X11.Extra
+                 Workflow.Backends.X11.Example
 
  build-depends:
                base >=4.7 && <5
@@ -67,10 +68,11 @@ library
 --              , bytestring
 --              , stm
 --              , template-haskell
+             , deepseq
+             , hashable
+             , semigroups
 
-          , deepseq
-          , hashable
-          , semigroups
+             , X11
 
 --              , lens
 --              , exceptions
@@ -93,7 +95,7 @@ library
 --              , parallel
 
 
-executable example-workflow-backends-x11
+executable example-workflow-x11
  hs-source-dirs:      executables
  main-is:             Main.hs
 
@@ -102,7 +104,7 @@ executable example-workflow-backends-x11
 
  build-depends:
     base
-  , workflow-backends-x11
+  , workflow-x11
 
 
 -- $ stack test doctest
@@ -116,7 +118,7 @@ test-suite doctest
 
  build-depends:
     base
-  , workflow-backends-x11
+  , workflow-x11
   , doctest
 
 
@@ -130,11 +132,11 @@ test-suite unittest
  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
 
  other-modules:
-  Commands.Test
+  Workflow.Backends.X11.Test
 
  build-depends:
     base
-  , workflow-backends-x11
+  , workflow-x11
   , hspec ==2.2.*
   , QuickCheck ==2.8.*
   -- , tasty
@@ -152,7 +154,7 @@ benchmark command
 
  build-depends:
     base
-  , workflow-backends-x11
+  , workflow-x11
   , criterion
   , deepseq
 

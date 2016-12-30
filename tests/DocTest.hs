@@ -2,6 +2,6 @@
 import Test.DocTest
 
 main = doctest
- [ "sources/Commands.hs"
+ [ "sources/Workflow/Backends/X11.hs"
  ]
 

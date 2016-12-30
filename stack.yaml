@@ -4,7 +4,10 @@ compiler: ghc-8.0
 nix:
   enable: true
   pure: true
-  packages: [zlib]
+  packages:
+  - zlib
+  - x11
+  - xorg.libXrandr
   # shell-file: shell.nix
 
 packages:

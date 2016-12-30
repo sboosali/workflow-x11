@@ -1,5 +1,5 @@
 {-# OPTIONS_GHC -fno-warn-missing-signatures #-}
-import qualified Commands.Example
+import qualified Workflow.Backends.X11.Example
 
-main = Commands.Example.main
+main = Workflow.Backends.X11.Example.main
 

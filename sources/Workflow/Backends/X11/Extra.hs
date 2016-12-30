@@ -1,5 +1,5 @@
-module Commands.Extra
- ( module Commands.Extra
+module Workflow.Backends.X11.Extra
+ ( module Workflow.Backends.X11.Extra
  , module X
  ) where
 
